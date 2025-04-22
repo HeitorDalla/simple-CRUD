@@ -1,13 +1,24 @@
 "use strict";
 
-const form = document.querySelector("#form");
+const cadastrarTarefa = document.querySelector("#cadastrarTarefa");
+const limpar = document.querySelector("#limpar");
+
+// Função para limpar os valores do input
+
+function limparValores () {
+
+};
 
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
-    form.addEventListener("submit", (event) => {
+    cadastrarTarefa.addEventListener("click", (event) => {
         event.preventDefault();
     
         
+    });
+
+    limpar.addEventListener("click", (event) => {
+        limparValores();
     });
 });

@@ -10,17 +10,31 @@
     <h1>Sistemas de Tarefas</h1>
     <form action="" id="form">
         <fieldset id="containerDados">
-            <div id="info">
+            <div class="info">
                 <label for="descricao">Descrição</label>
                 <input type="text" id="descricao">
             </div>
-            <div id="info">
+            <div class="info">
                 <label for="valor">Valor</label>
                 <input type="text" id="valor">
             </div>
-            <div id="info">
-                <label for="categoria">Categoria</label>
-                <input type="text" id="categoria">
+            <div class="info">
+                <label for="tipo">Tipo</label>
+    
+                <div class="alimentação">
+                    <input type="radio" id="alimentação">
+                    <label for="alimentação">Alimentação</label>
+                </div>
+                
+                <div class="transporte">
+                    <input type="radio" id="transporte">
+                    <label for="transporte">Transporte</label>
+                </div>
+
+                <div class="outro">
+                    <input type="radio" id="outro">
+                    <label for="outro">Outro</label>
+                </div>
             </div>
         </fieldset>
 
