@@ -50,7 +50,7 @@ h1 {
 }
 
 div {
-    margin: 20px;
+    margin: 10px;
 }
 
 .info {
@@ -76,4 +76,40 @@ div {
 
 .info input[type="radio"] {
     margin-right: 5px;
+}
+
+.alimentacao, .transporte, .outro {
+    display: flex;
+    align-items: center;
+}
+
+/* Configuração do containe das função de cadastrar e limpar */
+
+#containerFuncoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#cadastrarTarefa, #limpar {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cadastrarTarefa:hover {
+    background-color: #0056b3;
+}
+
+#limpar {
+    background-color: #6c757d;
+}
+
+#limpar:hover {
+    background-color: #545b62;
 }
