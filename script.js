@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     limpar.addEventListener("click", (event) => {
+        event.preventDefault();
+        
         limparValores();
     });
 });

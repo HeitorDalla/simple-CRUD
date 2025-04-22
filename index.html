@@ -7,42 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sistemas de Tarefas</h1>
-    <form action="" id="form">
-        <fieldset id="containerDados">
-            <div class="info">
-                <label for="descricao">Descrição</label>
-                <input type="text" id="descricao">
-            </div>
-            <div class="info">
-                <label for="valor">Valor</label>
-                <input type="text" id="valor">
-            </div>
-            <div class="info">
-                <label for="tipo">Tipo</label>
+    <main>
+        <h1>Sistemas de Tarefas</h1>
+        <form action="" id="form">
+            <fieldset id="containerDados">
+                <div class="info">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao">
+                </div>
+
+                <div class="info">
+                    <label for="valor">Valor</label>
+                    <input type="text" id="valor">
+                </div>
+
+                <div class="info">
+                    <label for="tipo">Tipo</label>
+                    <div class="alimentacao">
+                        <input type="radio" id="alimentacao" name="tipo" value="alimentacao">
+                        <label for="alimentacao">Alimentação</label>
+                    </div>
+                    <div class="transporte">
+                        <input type="radio" id="transporte" name="tipo" value="transporte">
+                        <label for="transporte">Transporte</label>
+                    </div>
+                    <div class="outro">
+                        <input type="radio" id="outro" name="tipo" value="outro">
+                        <label for="outro">Outro</label>
+                    </div>
+                </div>
+            </fieldset>
     
-                <div class="alimentação">
-                    <input type="radio" id="alimentação">
-                    <label for="alimentação">Alimentação</label>
-                </div>
-                
-                <div class="transporte">
-                    <input type="radio" id="transporte">
-                    <label for="transporte">Transporte</label>
-                </div>
+            <fieldset id="containerFuncoes">
+                <input type="submit" value="Cadastrar Tarefa" id="cadastrarTarefa">
+                <input type="reset" value="Limpar" id="limpar">
+            </fieldset>
+        </form>
+    
+        <div id="containerTarefas">
+            <h2>Tarefas Cadastradas</h2>
+            <ul class="tarefas-lista"></ul>
+        </div>
 
-                <div class="outro">
-                    <input type="radio" id="outro">
-                    <label for="outro">Outro</label>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset id="containerFuncoes">
-            <input type="submit" value="Cadastrar Tarefa" id="cadastrarTarefa">
-            <input type="reset" value="Limpar" id="limpar">
-        </fieldset>
-    </form>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
