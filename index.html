@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto - Prova Leonardo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <main>
@@ -12,42 +13,48 @@
         <form action="" id="form">
             <fieldset id="containerDados">
                 <div class="info">
-                    <label for="descricao">Descrição</label>
+                    <label for="descricao">Descrição:</label>
                     <input type="text" id="descricao">
                 </div>
 
                 <div class="info">
-                    <label for="valor">Valor</label>
-                    <input type="text" id="valor">
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor">
                 </div>
 
-                <div class="info">
-                    <label for="tipo">Tipo</label>
-                    <div class="alimentacao">
-                        <input type="radio" id="alimentacao" name="tipo" value="alimentacao">
-                        <label for="alimentacao">Alimentação</label>
+                <div class="info tipo-container">
+                    <label for="tipo">Tipo:</label>
+                    <div class="radio-group">
+                        <div class="alimentacao">
+                            <input type="radio" id="alimentacao" name="tipo" value="alimentacao">
+                            <label for="alimentacao">Alimentação</label>
+                        </div>
+                        <div class="transporte">
+                            <input type="radio" id="transporte" name="tipo" value="transporte">
+                            <label for="transporte">Transporte</label>
+                        </div>
+                        <div class="outro-container">
+                            <input type="radio" id="outro" name="tipo" value="outro">
+                            <label for="outro">Outro:</label>
+                            <input type="text" id="inputOutro" placeholder="Digite outro tipo">
+                        </div>
                     </div>
-                    <div class="transporte">
-                        <input type="radio" id="transporte" name="tipo" value="transporte">
-                        <label for="transporte">Transporte</label>
-                    </div>
-                    <div class="outro">
-                        <input type="radio" id="outro" name="tipo" value="outro">
-                        <label for="outro">Outro</label>
-                    </div>
-                    <input type="text" id="inputOutro">
                 </div>
             </fieldset>
-    
+
             <fieldset id="containerFuncoes">
-                <input type="button" value="Cadastrar Tarefa" id="cadastrarTarefa">
-                <input type="button" value="Limpar" id="limpar">
+                <button type="button" id="cadastrarTarefa">Cadastrar Tarefa</button>
+                <button type="button" id="limpar">Limpar</button>
             </fieldset>
         </form>
-    
-        <div id="containerTarefas" style="display: none;">
+
+        <div id="containerTarefas">
             <h2>Tarefas Cadastradas</h2>
-            <ul class="tarefas-lista"> <!-- Aqui será adicionado as tarefas --> </ul>
+            <ul class="tarefas-lista">
+                </ul>
+            <div class="total">
+                <strong>Total:</strong> <span id="valorTotal">R$ 0,00</span>
+            </div>
         </div>
 
     </main>

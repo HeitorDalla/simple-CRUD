@@ -9,6 +9,8 @@ const outro = document.querySelector("#outro");
 const cadastrarTarefa = document.querySelector("#cadastrarTarefa");
 const limpar = document.querySelector("#limpar");
 
+let tarefas = []; // Array para adicionar cada tarefa
+
 // Função para limpar os valores do input
 function limparValores () {
     descricao.value = '';
@@ -66,3 +68,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         limparValores();
     });
 });
+
