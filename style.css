@@ -44,7 +44,6 @@ h1 {
     width: 100%;
 }
 
-
 #containerDados {
     padding: 15px;
     border: 1px solid #ddd;
@@ -75,6 +74,14 @@ div {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.info input[type="number"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 
 .info input[type="radio"] {
     margin-right: 5px;

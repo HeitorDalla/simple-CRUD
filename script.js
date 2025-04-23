@@ -5,20 +5,23 @@ const containerTarefas = document.querySelector("#containerTarefas");
 const descricao = document.querySelector("#descricao");
 const valor = document.querySelector("#valor");
 const outro = document.querySelector("#outro");
-
+const outroInput = document.querySelector("#inputOutro");
+const listaTarefas = document.querySelector(".tarefas-lista");
+const valorTotalSpan = document.querySelector("#valorTotal");
 const cadastrarTarefa = document.querySelector("#cadastrarTarefa");
 const limpar = document.querySelector("#limpar");
 
-let tarefas = []; // Array para adicionar cada tarefa   
+let tarefas = []; // Array para adicionar cada tarefa  
 
 // Função para limpar valores
 function limparValores() {
     descricao.value = '';
     valor.value = '';
-    outro.checked = false;  
-    outro.value = '';
-    if (outro.style.display === 'inline-block') {
-        outro.style.display = 'none';
+    outro.checked = false;
+    const inputOutroElement = document.querySelector("#inputOutro");
+    if (inputOutroElement) {
+        inputOutroElement.value = '';
+        inputOutroElement.style.display = 'none';
     }
     descricao.focus();
 }
@@ -103,4 +106,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     atualizarListaTarefas();
 });
-
