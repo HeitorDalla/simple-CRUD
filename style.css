@@ -116,3 +116,43 @@ div {
 
 /* Configuração para a tela de Tarefas cadastradas */
 
+#containerTarefas {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.tarefas-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.tarefas-lista li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tarefas-lista li:hover {
+    background-color: #eee;
+}
+
+.tarefas-lista li span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.tarefas-lista li .tipo-tag {
+    background-color: #e0f7fa;
+    color: #00acc1;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
