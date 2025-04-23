@@ -61,35 +61,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // Adicionando evento de click no botão de cadastrar tarefa
-    cadastrarTarefa.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        let isValid = true; // Variável de controle
-
-        const inputs = [...document.querySelectorAll(".info")];
-        inputs.forEach((input) => {
-            if (!isValid) {
-                return;
-            }
-
-            if (input.value === '') {
-                alert("Preencha todos os campos corretamente");
-                isValid = false;
-                return;
-            }
-
-            if (isValid) {
-                adicionarGastos();
-                containerTarefas.style.display = 'block';
-            }
-        });
-    });
+    cadastrarTarefa.addEventListener("click", adicionarGastos);
 
     // Adicionando evento de click para o botão de limpar valores
-    limpar.addEventListener("click", (event) => {
-        event.preventDefault();
+    limpar.addEventListener("click", limparValores);
 
-        limparValores();
-    });
+    atualizarListaTarefas();
 });
 
