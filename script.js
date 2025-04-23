@@ -25,17 +25,17 @@ function limparValores() {
 
 // Função para adicionar cada gasto
 const adicionarGastos = () => {
-    const desc = descricaoInput.value.trim();
-    const val = parseFloat(valorInput.value);
+    const desc = descricao.value.trim();
+    const val = parseFloat(valor.value);
     const tipoSelecionado = document.querySelector('input[name="tipo"]:checked');
     let tipo = tipoSelecionado?.value;
 
-    if (!desc || isNaN(val) || !tipo || (tipo === 'outro' && !outroInput.value.trim())) {
+    if (!desc || isNaN(val) || !tipo || (tipo === 'outro' && !document.querySelector("#inputOutro").value.trim())) {
         alert("Preencha todos os campos corretamente.");
         return;
     }
 
-    if (tipo === 'outro') tipo = outroInput.value.trim();
+    if (tipo === 'outro') tipo = document.querySelector("#inputOutro").value.trim();
 
     tarefas.push({ id: Date.now(), descricao: desc, valor: val, tipo });
     atualizarListaTarefas();
@@ -43,6 +43,7 @@ const adicionarGastos = () => {
     containerTarefas.style.display = "block";
 };
 
+// Função para remover tarefa
 const removerTarefa = (id) => {
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
     atualizarListaTarefas();
@@ -51,7 +52,7 @@ const removerTarefa = (id) => {
 
 // Função para atualizr no DOM a lista de tarefas
 const atualizarListaTarefas = () => {
-    listaTarefas.innerHTML = "";
+    tarefas.innerHTML = "";
     let total = 0;
     tarefas.forEach(t => {
         const listItem = document.createElement("li");
@@ -77,20 +78,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
     document.querySelector("#descricao").focus(); // Vai dar foco ao input de descricao
-    outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
+    outro.style.display = outro.checked ? "inline-block" : "none";
 
     // Adicionando evento de click para quando eu clicar no input de outro
     outro.addEventListener("change", () => {
-        outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
-        if (outroRadio.checked) outroInput.focus();
+        outro.style.display = outro.checked ? "inline-block" : "none";
+        if (outro.checked) outro.focus();
     });
 
     const tipoRadioButtons = document.querySelectorAll('input[name="tipo"]');
     tipoRadioButtons.forEach(radio => {
         radio.addEventListener('change', () => {
-            outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
-            if (!outroRadio.checked) outroInput.value = "";
-            if (outroRadio.checked) outroInput.focus();
+            outro.style.display = outro.checked ? "inline-block" : "none";
+            if (!outro.checked) outro.value = "";
+            if (outro.checked) outro.focus();
         });
     });
 
