@@ -11,18 +11,31 @@ const limpar = document.querySelector("#limpar");
 
 let tarefas = []; // Array para adicionar cada tarefa
 
-// Função para limpar os valores do input
-function limparValores () {
+function limparValores() {
     descricao.value = '';
     valor.value = '';
     outro.checked = false;
-
-    document.querySelector("#descricao").focus(); // Vai dar foco ao input de descricao
-};
+    outro.value = '';
+    if (outro.style.display === 'inline-block') {
+        outro.style.display = 'none';
+    }
+    descricao.focus();
+}
 
 // Função para adicionar os gastos
 function adicionarGastos () {
 
+};
+
+// Função para remover tarefa
+function removerTarefa(id) {
+    tarefas = tarefas.filter(() => {
+        tarefa => tarefa.id !== id
+    });
+    atualizarListaTarefas();
+    if (tarefas.length === 0) {
+        containerTarefas.style.display = 'none';
+    }
 };
 
 // Listener para ativar quando o html for completamente carregado

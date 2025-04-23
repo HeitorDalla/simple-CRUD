@@ -1,3 +1,5 @@
+/* Configurações Padrões */
+
 * {
     padding: 0;
     margin: 0;
@@ -114,7 +116,7 @@ div {
     background-color: #545b62;
 }
 
-/* Configuração para a tela de Tarefas cadastradas */
+/* Configuração para a tela de Tarefas Cadastradas */
 
 #containerTarefas {
     margin-top: 30px;
