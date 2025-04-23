@@ -11,6 +11,7 @@ const limpar = document.querySelector("#limpar");
 
 let tarefas = []; // Array para adicionar cada tarefa   
 
+// Função para limpar valores
 function limparValores() {
     descricao.value = '';
     valor.value = '';
@@ -22,6 +23,7 @@ function limparValores() {
     descricao.focus();
 }
 
+// Função para adicionar cada gasto
 const adicionarGastos = () => {
     const desc = descricaoInput.value.trim();
     const val = parseFloat(valorInput.value);
@@ -41,15 +43,33 @@ const adicionarGastos = () => {
     containerTarefas.style.display = "block";
 };
 
-// Função para remover tarefa
-function removerTarefa(id) {
-    tarefas = tarefas.filter(() => {
-        tarefa => tarefa.id !== id
-    });
+const removerTarefa = (id) => {
+    tarefas = tarefas.filter(tarefa => tarefa.id !== id);
     atualizarListaTarefas();
-    if (tarefas.length === 0) {
-        containerTarefas.style.display = 'none';
-    }
+    containerTarefas.style.display = tarefas.length > 0 ? "block" : "none";
+};
+
+// Função para atualizr no DOM a lista de tarefas
+const atualizarListaTarefas = () => {
+    listaTarefas.innerHTML = "";
+    let total = 0;
+    tarefas.forEach(t => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+            <span>${t.descricao}</span>
+            <span class="tipo-tag">${t.tipo}</span>
+            <span class="valor-tarefa ${t.valor > 100 ? 'valor-alto' : ''}">R$ ${t.valor.toFixed(2)}</span>
+            <button class="remover-tarefa" data-id="${t.id}">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        `;
+        listItem.querySelector('.remover-tarefa').addEventListener('click', function() {
+            removerTarefa(parseInt(this.dataset.id));
+        });
+        listaTarefas.appendChild(listItem);
+        total += t.valor;
+    });
+    valorTotalSpan.textContent = `R$ ${total.toFixed(2)}`;
 };
 
 // Listener para ativar quando o html for completamente carregado
