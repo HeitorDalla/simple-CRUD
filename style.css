@@ -156,3 +156,16 @@ div {
     margin-left: 10px;
 }
 
+.tarefas-lista li .botoes-acao button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 1em;
+    color: #5f637e;
+    transition: color 0.2s ease-in-out;
+}
+
+.tarefas-lista li .botoes-acao button:hover {
+    color: #dc3545; 
+}
