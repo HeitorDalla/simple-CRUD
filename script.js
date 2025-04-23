@@ -14,7 +14,7 @@ let tarefas = []; // Array para adicionar cada tarefa
 function limparValores() {
     descricao.value = '';
     valor.value = '';
-    outro.checked = false;
+    outro.checked = false;  
     outro.value = '';
     if (outro.style.display === 'inline-block') {
         outro.style.display = 'none';
@@ -22,9 +22,23 @@ function limparValores() {
     descricao.focus();
 }
 
-// Função para adicionar os gastos
-function adicionarGastos () {
+const adicionarGastos = () => {
+    const desc = descricaoInput.value.trim();
+    const val = parseFloat(valorInput.value);
+    const tipoSelecionado = document.querySelector('input[name="tipo"]:checked');
+    let tipo = tipoSelecionado?.value;
 
+    if (!desc || isNaN(val) || !tipo || (tipo === 'outro' && !outroInput.value.trim())) {
+        alert("Preencha todos os campos corretamente.");
+        return;
+    }
+
+    if (tipo === 'outro') tipo = outroInput.value.trim();
+
+    tarefas.push({ id: Date.now(), descricao: desc, valor: val, tipo });
+    atualizarListaTarefas();
+    limparValores();
+    containerTarefas.style.display = "block";
 };
 
 // Função para remover tarefa
