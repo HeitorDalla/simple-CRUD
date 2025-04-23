@@ -9,7 +9,7 @@ const outro = document.querySelector("#outro");
 const cadastrarTarefa = document.querySelector("#cadastrarTarefa");
 const limpar = document.querySelector("#limpar");
 
-let tarefas = []; // Array para adicionar cada tarefa
+let tarefas = []; // Array para adicionar cada tarefa   
 
 function limparValores() {
     descricao.value = '';
@@ -43,10 +43,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
     document.querySelector("#descricao").focus(); // Vai dar foco ao input de descricao
+    outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
 
     // Adicionando evento de click para quando eu clicar no input de outro
-    outro.addEventListener("click", () => {
-        document.querySelector("#inputOutro").focus();
+    outro.addEventListener("change", () => {
+        outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
+        if (outroRadio.checked) outroInput.focus();
+    });
+
+    const tipoRadioButtons = document.querySelectorAll('input[name="tipo"]');
+    tipoRadioButtons.forEach(radio => {
+        radio.addEventListener('change', () => {
+            outroInput.style.display = outroRadio.checked ? "inline-block" : "none";
+            if (!outroRadio.checked) outroInput.value = "";
+            if (outroRadio.checked) outroInput.focus();
+        });
     });
 
     // Adicionando evento de click no botão de cadastrar tarefa

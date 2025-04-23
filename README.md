@@ -1,5 +1,5 @@
 # Cadastro de Tarefas
-Esse projeto simula uma calculadora, com suas funcionalidades padrões. Esse software foi construído com as tecnologias HTML, CSS e Javascript. Seu objetivo é demostrar cálculos matemáticos do básico ao intermediário.
+Simples sistema web para cadastrar tarefas com descrição, valor e tipo. Exibe lista, valor total e destaca valores acima de R$ 100. Permite remover itens.
 
 ## Tecnologias utilizadas
 Essse projeto foi desenvolvido seguindo as seguintes tecnologias:
@@ -12,15 +12,18 @@ Essse projeto foi desenvolvido seguindo as seguintes tecnologias:
 ()
 
 ## Funcionalidades
-- Exibi os números de 1 a 10
-- Exibi caracteres de soma, subtração, multiplicaçõa e divisão
-- Mostra o botão de apagar os textos dos resultados
-- Exibi o botão de igual, para mostrar o resultado
+- Adicionar descrição, valor e tipo de tarefa
+- Listar tarefas
+- Calcular valor total
+- Destacar valores > R$ 100 (vermelho)
+- Remover tarefas (ícone de lixeira)
   
 ## Como Usar
 1. Abra o arquivo index.html em seu navegador da web.
-2. Faça uma operação (escolha os números)
-3. Escolha a operação a ser feita
+2. Preencha o formulário
+3. Clique em "Cadastrar Tarefa"
+4. Veja a lista e o total abaixo
+5. Clique na lixeira para remover tarefas
 
 ## Pré-requisitos
 Não há pré-requisitos específicos para utilizar este gerador de senha.
