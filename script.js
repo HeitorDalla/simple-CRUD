@@ -1,6 +1,7 @@
 "use strict";
 
 const containerDados = document.querySelector("#containerDados");
+const containerTarefas = document.querySelector("#containerTarefas");
 const descricao = document.querySelector("#descricao");
 const valor = document.querySelector("#valor");
 const outro = document.querySelector("#outro");
@@ -17,6 +18,11 @@ function limparValores () {
     document.querySelector("#descricao").focus(); // Vai dar foco ao input de descricao
 };
 
+// Função para adicionar os gastos
+function adicionarGastos () {
+
+};
+
 // Listener para ativar quando o html for completamente carregado
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
@@ -31,8 +37,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Adicionando evento de click no botão de cadastrar tarefa
     cadastrarTarefa.addEventListener("click", (event) => {
         event.preventDefault();
-    
-        
+
+        let isValid = true; // Variável de controle
+
+        const inputs = [...document.querySelectorAll(".info")];
+        inputs.forEach((input) => {
+            if (!isValid) {
+                return;
+            }
+
+            if (input.value === '') {
+                alert("Preencha todos os campos corretamente");
+                isValid = false;
+                return;
+            }
+
+            if (isValid) {
+                adicionarGastos();
+                containerTarefas.style.display = 'block';
+            }
+        });
     });
 
     // Adicionando evento de click para o botão de limpar valores
